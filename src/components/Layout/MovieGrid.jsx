@@ -7,7 +7,7 @@ const MovieGrid = ({ movies }) => {
       <div className='row row-cols-1 row-cols-sm-2 row-cols-md-4'>
         {movies.map((movie) => {
           return (
-            <Link to='/s' key={movie.id}>
+            <Link to={`/movie/${movie.id}`} key={movie.id}>
             <div className='col gy-3' key={movie.id}>
               <div className='card mb-3' style={{height:'100%'}}>
                 <img
