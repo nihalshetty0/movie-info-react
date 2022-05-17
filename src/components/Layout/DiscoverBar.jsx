@@ -12,7 +12,6 @@ const DiscoverBar = () => {
   const [genreList, setGenreList] = useState([]);
   const [genreChoice, setGenreChoice] = useState([]);
 
-
   useEffect(() => {
     (async () => {
       const res = await axios.get(
@@ -21,8 +20,9 @@ const DiscoverBar = () => {
       setGenreList(res.data.genres);
     })();
 
-    const selectedGenre = searchParams.get("with_genre") 
-    if(selectedGenre !== null) setGenreChoice([...selectedGenre.split(',')])
+    const selectedGenre = searchParams.get("with_genre");
+    if (selectedGenre !== null) setGenreChoice([...selectedGenre.split(",")]);
+    // eslint-disable-next-line
   }, []);
 
   const toggleGenre = (e) => {
@@ -37,7 +37,8 @@ const DiscoverBar = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (genreChoice.length > 0) {
-      navigate(`/home?with_genre=${genreChoice.join(",")}`);
+      console.log(`${genreChoice.join(",")}`);
+      setSearchParams({ with_genre: genreChoice.join(","), page: 1 });
     } else {
       navigate(`/home`);
     }
@@ -49,6 +50,7 @@ const DiscoverBar = () => {
         <div className='accordion-item'>
           <h2 className='accordion-header' id='flush-headingOne'>
             <button
+              id='chooseGenre'
               className='accordion-button collapsed'
               type='button'
               data-bs-toggle='collapse'

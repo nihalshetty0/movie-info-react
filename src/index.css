@@ -6,3 +6,8 @@ body::before {
 .option-active{
   background: red;
 }
+img {
+  background: url('rr.jpg');
+  /* height: 500px; */
+  /* object-fit: cover; */
+}

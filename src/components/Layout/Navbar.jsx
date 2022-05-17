@@ -4,7 +4,7 @@ import {Link }from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav className='navbar navbar-expand-lg bg-dark navbar-dark fixed-top'>
+    <nav id='navbar' className='navbar navbar-expand-lg bg-dark navbar-dark fixed-top'>
       <div className='container'>
         <a href='/' className='navbar-brand'>
           Movies
