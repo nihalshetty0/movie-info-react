@@ -4,28 +4,19 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav
-      id='navbar'
-      className='navbar navbar-expand-lg bg-dark navbar-dark fixed-top'
-    >
+    <nav id='navbar' className='navbar navbar-expand-lg fixed-top'>
       <div className='container'>
-        <Link to='/home' className='navbar-brand'>
-          Movies
+        <Link
+          to='/home'
+          className='navbar-brand text-primary text-uppercase fw-bold fs-0'
+        >
+          Movies to watch
         </Link>
 
         {/* Navigation link */}
-        <div className='row text-white'>
-          <div className='col px-4'>
-            <Link to='/home' className='nav-link'>
-              Popular
-            </Link>
-          </div>
-          <div className='col'>
-            <Link to='/search' className='nav-link'>
-              <i className='bi bi-search'></i>
-            </Link>
-          </div>
-        </div>
+          <Link to='/search' className='nav-link text-primary'>
+            <i className='bi bi-search'></i>
+          </Link>
       </div>
     </nav>
   );

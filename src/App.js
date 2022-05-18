@@ -12,10 +12,10 @@ import Movie from "./components/Pages/Movie";
 
 const App = () => {
   return (
-    <>
+    <div className="bg-light">
       <Router>
         <Navbar />
-        <div className='container pt-4'>
+        <div className='container pt-3 '>
           <Routes>
             <Route
               exact
@@ -29,7 +29,7 @@ const App = () => {
           </Routes>
         </div>
       </Router>
-    </>
+    </div>
   );
 };
 

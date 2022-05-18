@@ -69,8 +69,8 @@ const MoviePoster = ({ movieInfo }) => {
 
 const AboutMovie = ({ movieInfo }) => {
   return (
-    <div className=''>
-      <h1 className='fw-semibold'>{movieInfo.original_title}</h1>
+    <div className='text-primary'>
+      <h1 className='fw-semibold '>{movieInfo.original_title}</h1>
       <div className='d-flex w-100'>
         <p className='me-3 mb-1'>{movieInfo.release_date}</p>
         <p className='me-3 mb-1'>{movieInfo.runtime} min</p>
@@ -79,14 +79,14 @@ const AboutMovie = ({ movieInfo }) => {
       <div className='d-none'>
         {movieInfo.genres.map((genre) => {
           return (
-            <p key={genre.id} className='me-3 fs-6'>
+            <p key={genre.id} className='me-3 fs-6 text-primary'>
               {genre.name}
             </p>
           );
         })}
       </div>
-      <h4 className='text-muted fw-semibold'>{movieInfo.tagline}</h4>
-      <p className=''>{movieInfo.overview}</p>
+      <h4 className='fw-semibold'>{movieInfo.tagline}</h4>
+      <p className='text-white'>{movieInfo.overview}</p>
     </div>
   );
 };

@@ -46,10 +46,10 @@ export default Search;
 
 const SearchBar =({ onSubmit, searchRef }) =>{
   return (
-    <form className='input-group mb-3' onSubmit={onSubmit}>
+    <form className='input-group mb-3 ' onSubmit={onSubmit}>
       <input
         type='text'
-        className='form-control'
+        className='form-control bg-light text-dark fs-6 fw-semibold'
         placeholder='Search for movies...'
         required
         ref={searchRef}

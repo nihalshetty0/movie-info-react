@@ -3,6 +3,19 @@ body::before {
   content: "";
   height: 56px;
 }
+html, body, #root{
+  height: 100%;
+}
+body{
+  background-color: #091c25;
+}
+#navbar:hover{
+  background-color: rgba(0,0,0,0.4);
+  transition: all ease-in-out 500ms;
+  /* background-color: #091c25; */
+  /* opacity: %; */
+  /* color: #01d277; */
+}
 img {
   background: linear-gradient(to top, #b993d6, #8ca6db); 
   /* object-fit: cover; */

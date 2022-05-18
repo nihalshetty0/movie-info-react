@@ -65,7 +65,7 @@ const Pagination = ({ maxPage }) => {
       <nav className='my-4 d-flex justify-content-center'>
         <ul className='pagination'>
           <li className='page-item'>
-            <button className='page-link' onClick={toPrevPage}>
+            <button className='page-link bg-light' onClick={toPrevPage}>
               <span aria-hidden='true'>&laquo;</span>
             </button>
           </li>
@@ -73,7 +73,7 @@ const Pagination = ({ maxPage }) => {
           <PaginationArray maxPage={maxPage} page={page} onClick={onClick} />
 
           <li className='page-item'>
-            <button className='page-link' onClick={toNextPage}>
+            <button className='page-link bg-light' onClick={toNextPage}>
               <span aria-hidden='true'>&raquo;</span>
             </button>
           </li>
@@ -88,8 +88,8 @@ const PaginationArray = ({ maxPage, page, onClick }) => {
     <>
       {getPageArray(page, maxPage).map((l) => {
         return (
-          <li className={`page-item ${page === l && "active"}`} key={l}>
-            <button className='page-link' data-page={l} onClick={onClick}>
+          <li className={`page-item`} key={l}>
+            <button className={`page-link ${page === l ? "active":"bg-light"}`} data-page={l} onClick={onClick}>
               {l}
             </button>
           </li>

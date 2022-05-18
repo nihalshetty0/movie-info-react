@@ -65,7 +65,8 @@ const Fitler = () => {
         <h2 className='accordion-header' id='flush-headingOne'>
           <button
             id='chooseGenre'
-            className='accordion-button collapsed fw-bold fs-4'
+            className='accordion-button collapsed fw-bold fs-6 p-2 text-primary'
+            style={{ backgroundColor: 'rgb(9, 28, 37, 1)' }}
             type='button'
             data-bs-toggle='collapse'
             data-bs-target='#flush-collapseOne'
@@ -87,7 +88,7 @@ const Fitler = () => {
 
         <div
           id='flush-collapseOne'
-          className='accordion-collapse collapse'
+          className='accordion-collapse collapse text-primary bg-light'
           aria-labelledby='flush-headingOne'
           data-bs-parent='#accordionFlushExample'
         >
@@ -125,7 +126,7 @@ const Fitler = () => {
   );
 };
 
-const GenreList =({ genreList, genreChoice, toggleGenre })=> {
+const GenreList = ({ genreList, genreChoice, toggleGenre }) => {
   return (
     <div className='row row-cols-auto mb-4'>
       {genreList.map((genre) => {
@@ -136,6 +137,10 @@ const GenreList =({ genreList, genreChoice, toggleGenre })=> {
                 ? "btn-secondary"
                 : "btn-outline-secondary"
             }`}
+            style={{
+              // height:'2.4em'
+              padding: '0.5rem'
+            }}
             key={genre.id}
             data-genre-id={genre.id}
             onClick={toggleGenre}
@@ -146,6 +151,6 @@ const GenreList =({ genreList, genreChoice, toggleGenre })=> {
       })}
     </div>
   );
-}
+};
 
 export default Fitler;
