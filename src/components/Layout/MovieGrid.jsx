@@ -39,7 +39,7 @@ const MovieGrid = ({ movies }) => {
 
   return (
     <>
-      <div className='row row-cols-2 row-cols-sm-3 row-cols-md-4'>
+      <div className='row row-cols-2 row-cols-md-4'>
         {movies.map((movie) => {
           return (
             // <div  key={movie.id}>
