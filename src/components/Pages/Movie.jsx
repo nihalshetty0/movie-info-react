@@ -13,7 +13,7 @@ const Movie = () => {
         `https://api.themoviedb.org/3/movie/${params.id}?api_key=490daab0f9ce767ec92bfabd7c11cb1e`
       );
       setMovieInfo(res.data);
-      console.log(res.data);
+      console.log(res.data)
     })();
     // eslint-disable-next-line
   }, []);
@@ -23,8 +23,8 @@ const Movie = () => {
 
   return (
     <>
-      <div className='row row-sm-reverse mb-5 mt-4'>
-        <MoviePoster poster_path={movieInfo.poster_path} />
+      <div className='d-flex flex-column-reverse flex-md-row '>
+        <MoviePoster movieInfo={movieInfo} />
         {/* movie info */}
         <AboutMovie movieInfo={movieInfo} />
       </div>
@@ -33,17 +33,36 @@ const Movie = () => {
 };
 export default Movie;
 
-const MoviePoster = ({ poster_path }) => {
+const MoviePoster = ({ movieInfo }) => {
   return (
     <>
-      {poster_path && ( // poster image
-        <div className='col-12 col-sm-6 mx-auto'>
+      {movieInfo.poster_path && ( // poster image
+        <>
           <img
-            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`}
             alt=''
-            className='w-100'
+            // className='border'
+            className='me-5 d-none d-md-block poster'
+            style={{
+              // maxHeight: '400px',
+              // objectFit: " cover",
+              // width: "100%",
+              // height: "350px",
+            }}
           />
-        </div>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movieInfo.backdrop_path}`}
+            alt=''
+            // className='border'
+            className='me-5 d-md-none poster'
+            style={{
+              // maxHeight: '400px',
+              // objectFit: " cover",
+              // width: "100%",
+              // height: "350px",
+            }}
+          />
+        </>
       )}
     </>
   );
@@ -51,7 +70,7 @@ const MoviePoster = ({ poster_path }) => {
 
 const AboutMovie = ({ movieInfo }) => {
   return (
-    <div className='col-12 col-md-6'>
+    <div className=''>
       <h1 className='fw-semibold'>{movieInfo.original_title}</h1>
       <div className='d-flex w-100'>
         <p className='me-3 mb-1'>{movieInfo.release_date}</p>

@@ -5,5 +5,10 @@ body::before {
 }
 img {
   background: linear-gradient(to top, #b993d6, #8ca6db); 
-  object-fit: cover;
+  /* object-fit: cover; */
+}
+img.poster{
+  height: 400px;
+  object-fit: contain;
+  background: none;
 }
