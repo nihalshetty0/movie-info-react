@@ -76,7 +76,6 @@ const Fitler = () => {
               <div
                 className='border border-primary ms-3 fw-normal p-1 rounded text-primary'
                 style={{
-                  // height: '1.5em'
                   fontSize: ".5em",
                 }}
               >
@@ -138,7 +137,6 @@ const GenreList = ({ genreList, genreChoice, toggleGenre }) => {
                 : "btn-outline-secondary"
             }`}
             style={{
-              // height:'2.4em'
               padding: '0.5rem'
             }}
             key={genre.id}

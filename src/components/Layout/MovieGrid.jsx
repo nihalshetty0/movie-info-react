@@ -28,7 +28,7 @@ const MovieGrid = ({ movies }) => {
           className='d-flex justify-content-center '
           style={{ height: "200px" }}
         >
-          <img src={empty} alt='Empty' />
+          <img src={empty} alt='' />
         </div>
         <h6 className='text-center fw-semibold'>
           Nothing to show for. Try something else
@@ -42,7 +42,6 @@ const MovieGrid = ({ movies }) => {
       <div className='row row-cols-2 row-cols-md-4'>
         {movies.map((movie) => {
           return (
-            // <div  key={movie.id}>
             <Link
               to={`/movie/${movie.id}`}
               className='col mb-4 '
@@ -54,7 +53,6 @@ const MovieGrid = ({ movies }) => {
                   style={{
                     position: "absolute",
                     height: "20px",
-                    // width: "100px",
                     padding:'5px 0px 5px 0px'
                   }}
                 >
@@ -64,7 +62,6 @@ const MovieGrid = ({ movies }) => {
                 </div>
               </div>
             </Link>
-            // </div>
           );
         })}
       </div>
@@ -100,16 +97,5 @@ const MoviePoster = ({ movie }) => {
         </>
       )}
     </>
-  );
-};
-
-const MovieInfo = ({ movie }) => {
-  return (
-    <div className='card-body m-0 p-2'>
-      <p className='mb-1 text-dark fw-bold fs-6'>{movie.original_title}</p>
-      <small className='text-muted fw-semibold'>
-        {movie.vote_average * 10}%
-      </small>
-    </div>
   );
 };

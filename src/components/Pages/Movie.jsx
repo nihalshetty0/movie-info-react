@@ -40,25 +40,13 @@ const MoviePoster = ({ movieInfo }) => {
           <img
             src={`https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`}
             alt=''
-            // className='border'
             className='me-5 d-none d-md-block poster'
-            style={{
-              // maxHeight: '400px',
-              // objectFit: " cover",
-              // width: "100%",
-              // height: "350px",
-            }}
           />
           <img
             src={`https://image.tmdb.org/t/p/w500${movieInfo.backdrop_path}`}
             alt=''
-            // className='border'
             className='me-5 d-md-none poster'
             style={{
-              // maxHeight: '400px',
-              // objectFit: " cover",
-              // width: "100%",
-              // height: "350px",
             }}
           />
         </>
