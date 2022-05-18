@@ -13,7 +13,6 @@ const Movie = () => {
         `https://api.themoviedb.org/3/movie/${params.id}?api_key=490daab0f9ce767ec92bfabd7c11cb1e`
       );
       setMovieInfo(res.data);
-      console.log(res.data)
     })();
     // eslint-disable-next-line
   }, []);

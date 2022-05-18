@@ -25,7 +25,6 @@ const Pagination = ({ maxPage }) => {
   }, [searchParams]);
 
   const pageChange = (num, maxPage) => {
-    console.log(maxPage);
     if (num > maxPage) return;
     setPage(num);
     const otherQuery = {};
