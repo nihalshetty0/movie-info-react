@@ -3,25 +3,45 @@ body::before {
   content: "";
   height: 56px;
 }
-html, body, #root{
+html,
+body,
+#root {
   height: 100%;
 }
-body{
+body {
   background-color: #091c25;
 }
-#navbar:hover{
-  background-color: rgba(0,0,0,0.4);
+#navbar:hover {
+  background-color: rgba(0, 0, 0, 0.4);
   transition: all ease-in-out 500ms;
-  /* background-color: #091c25; */
-  /* opacity: %; */
-  /* color: #01d277; */
 }
 img {
-  background: linear-gradient(to top, #b993d6, #8ca6db); 
-  /* object-fit: cover; */
+  background: linear-gradient(to top, #b993d6, #8ca6db);
 }
-img.poster{
+img.poster {
   height: 400px;
   object-fit: contain;
   background: none;
+}
+
+.card {
+  transition: transform ease-in-out 200ms;
+}
+
+.card:hover::before{
+  content: '';
+  position: absolute;
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  border-radius: 15px;
+  background-color: rgba(0, 0,0, 0.6);
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+.card:hover .hoverinfo {
+  display: block !important;
 }

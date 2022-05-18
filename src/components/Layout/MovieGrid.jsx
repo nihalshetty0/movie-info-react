@@ -49,17 +49,8 @@ const MovieGrid = ({ movies }) => {
             >
               <div className='card rounded-4 shadow-lg h-100 m-1 border-0 relative'>
                 <MoviePoster movie={movie} />
-                <div
-                  style={{
-                    position: "absolute",
-                    height: "20px",
-                    padding:'5px 0px 5px 0px'
-                  }}
-                >
-                  <small className='fw-semibold bg-primary text-dark p-1 rounded-1'>
-                    {movie.vote_average}
-                  </small>
-                </div>
+                <Rating vote_average={movie.vote_average} />
+                <TitleHover title={movie.title} />
               </div>
             </Link>
           );
@@ -99,3 +90,36 @@ const MoviePoster = ({ movie }) => {
     </>
   );
 };
+
+const Rating = ({ vote_average }) => {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        height: "20px",
+        padding: "5px 0px 5px 0px",
+      }}
+    >
+      <small className='fw-semibold bg-primary text-dark p-1 rounded-1'>
+        {vote_average}
+      </small>
+    </div>
+  );
+};
+
+function TitleHover({ title }) {
+  return (
+    <div
+      className='hoverinfo'
+      style={{
+        display: "none",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+      }}
+    >
+      <h3 className='text-primary text-center fw-semibold fs-4'>{title}</h3>
+    </div>
+  );
+}
