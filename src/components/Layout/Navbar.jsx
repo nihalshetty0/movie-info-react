@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav id='navbar' className='navbar navbar-expand-lg fixed-top'>
+    <nav
+      id='navbar'
+      className='navbar navbar-expand-lg fixed-top'
+      style={{
+        backgroundColor: "rgba(0,0,0,0.5)",
+      }}
+    >
       <div className='container'>
         <Link
           to='/home'
@@ -14,9 +20,9 @@ const Navbar = () => {
         </Link>
 
         {/* Navigation link */}
-          <Link to='/search' className='nav-link text-primary'>
-            <i className='bi bi-search'></i>
-          </Link>
+        <Link to='/search' className='nav-link text-primary'>
+          <i className='bi bi-search'></i>
+        </Link>
       </div>
     </nav>
   );

@@ -44,7 +44,7 @@ const Search = () => {
 
 export default Search;
 
-const SearchBar =({ onSubmit, searchRef }) =>{
+const SearchBar = ({ onSubmit, searchRef }) => {
   return (
     <form className='input-group mb-3 ' onSubmit={onSubmit}>
       <input
@@ -59,4 +59,4 @@ const SearchBar =({ onSubmit, searchRef }) =>{
       </button>
     </form>
   );
-}
+};
