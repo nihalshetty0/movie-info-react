@@ -22,14 +22,10 @@ const App = () => {
               path='/'
               element={<Navigate to='/home?page=1' />}
             ></Route>
-            <Route
-              exact
-              path='/home'
-              element={<Home popularMovies={[]} />}
-            ></Route>
+            <Route exact path='/home' element={<Home />}></Route>
             <Route exact path='/search' element={<Search />}></Route>
-            {/* <Route exact path='/search' element={<Search />}></Route> */}
             <Route exact path='/movie/:id' element={<Movie />}></Route>
+            <Route path='*' element={<Navigate to='/home?page=1' />}></Route>
           </Routes>
         </div>
       </Router>

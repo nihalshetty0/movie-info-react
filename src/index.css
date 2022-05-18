@@ -3,11 +3,7 @@ body::before {
   content: "";
   height: 56px;
 }
-.option-active{
-  background: red;
-}
 img {
-  background: url('rr.jpg');
-  /* height: 500px; */
-  /* object-fit: cover; */
+  background: linear-gradient(to top, #b993d6, #8ca6db); 
+  object-fit: cover;
 }

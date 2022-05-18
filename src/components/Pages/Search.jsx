@@ -7,11 +7,9 @@ import MovieGrid from "../Layout/MovieGrid";
 import Pagination from "../Layout/Pagination";
 
 const Search = () => {
-  // TODO: remove result on blank query
-
+  const [result, setResult] = useState(null);
+  const [maxPage, setMaxPage] = useState(0);
   let [searchParams] = useSearchParams();
-  const [result, setResult] = useState([]);
-  const [maxPage, setMaxPage] = useState(0)
 
   let navigate = useNavigate();
 
@@ -19,15 +17,14 @@ const Search = () => {
 
   useEffect(() => {
     const query = searchParams.get("query");
-    const page = searchParams.get("page") || 1
+    const page = searchParams.get("page") || 1;
     if (query === null || query === "") return;
-    // console.log(page)
     (async () => {
       const searchResult = await axios.get(
         `https://api.themoviedb.org/3/search/movie?api_key=490daab0f9ce767ec92bfabd7c11cb1e&query=${query}&page=${page}`
       );
       setResult(searchResult.data.results);
-      setMaxPage(searchResult.data.total_pages)
+      setMaxPage(searchResult.data.total_pages);
     })();
   }, [searchParams]);
 
@@ -37,24 +34,29 @@ const Search = () => {
   };
 
   return (
-    <div className='container pt-4'>
-      <form className='input-group mb-3' onSubmit={onSubmit}>
-        <input
-          type='text'
-          className='form-control'
-          placeholder='Search for movies...'
-          required
-          ref={searchRef}
-        />
-        <button type='submit' className='input-group-text' id='basic-addon1'>
-          <i className='bi bi-search'></i>
-        </button>
-      </form>
-
-      <MovieGrid movies={result} />
-      <Pagination maxPage={maxPage}/>
-    </div>
+    <>
+      <SearchBar onSubmit={onSubmit} searchRef={searchRef} />
+      {result !== null && <MovieGrid movies={result} />}
+      <Pagination maxPage={maxPage} />
+    </>
   );
 };
 
 export default Search;
+
+const SearchBar =({ onSubmit, searchRef }) =>{
+  return (
+    <form className='input-group mb-3' onSubmit={onSubmit}>
+      <input
+        type='text'
+        className='form-control'
+        placeholder='Search for movies...'
+        required
+        ref={searchRef}
+      />
+      <button type='submit' className='input-group-text' id='basic-addon1'>
+        <i className='bi bi-search'></i>
+      </button>
+    </form>
+  );
+}
